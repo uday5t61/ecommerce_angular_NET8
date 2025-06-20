@@ -12,3 +12,6 @@ dotnet ef migrations remove -s API -p Infrastructure
 
 #Apply migrations
 dotnet ef database update -s API -p Infrastructure
+
+#Drop database
+ dotnet ef database drop -p Infrastructure -s API
