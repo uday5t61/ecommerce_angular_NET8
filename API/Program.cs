@@ -14,7 +14,7 @@ builder.Services.AddDbContext<StoreContext>(options =>
 });
 
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
-builder.Services.AddScoped(typeof(IGenericRepository<>),typeof(GenericRepository<>));
+builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -44,7 +44,7 @@ try
     await context.Database.MigrateAsync();
     await StoreContextSeed.SeedAsync(context);
 }
-catch(Exception ex)
+catch (Exception ex)
 {
     Console.WriteLine(ex.Message);
     throw;

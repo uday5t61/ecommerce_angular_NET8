@@ -1,11 +1,6 @@
 ﻿using Core.Entities;
 using Core.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Infrastructure.Data
 {
@@ -32,7 +27,7 @@ namespace Infrastructure.Data
             return await context.Products.FindAsync(id);
         }
 
-        public async Task<IReadOnlyList<Product>> GetProductsAsync(string? brand, string? type,string? sort)
+        public async Task<IReadOnlyList<Product>> GetProductsAsync(string? brand, string? type, string? sort)
         {
             var query = context.Products.AsQueryable();
             if (!string.IsNullOrEmpty(brand))
@@ -54,7 +49,7 @@ namespace Infrastructure.Data
 
         public async Task<IReadOnlyList<string>> GetTypesAsync()
         {
-            return  await context.Products.Select(x => x.Type).Distinct().ToListAsync();
+            return await context.Products.Select(x => x.Type).Distinct().ToListAsync();
         }
 
         public async Task<bool> ProductExists(int id)
