@@ -26,15 +26,15 @@ namespace Infrastructure.Data
             return await context.Set<T>().FindAsync(id);
         }
 
-        public async Task<T?> GetEntityWithSpec(ISpecification<T> spec)
-        {
-            return await ApplySpecification(spec).FirstOrDefaultAsync();
-        }
+        //public async Task<T?> GetEntityWithSpec(ISpecification<T> spec)
+        //{
+        //    return await ApplySpecification(spec).FirstOrDefaultAsync();
+        //}
 
-        public async Task<TResult?> GetEntityWithSpec<TResult>(ISpecification<T, TResult> spec)
-        {
-            return await ApplySpecification(spec).FirstOrDefaultAsync();
-        }
+        //public async Task<TResult?> GetEntityWithSpec<TResult>(ISpecification<T, TResult> spec)
+        //{
+        //    return await ApplySpecification(spec).FirstOrDefaultAsync();
+        //}
 
         public async Task<IReadOnlyList<T>> ListAllAsync()
         {
