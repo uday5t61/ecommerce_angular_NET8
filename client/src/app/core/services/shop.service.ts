@@ -37,6 +37,9 @@ export class ShopService {
     );
   }
 
+  getProduct(id: number) {
+    return this.httpClient.get<Product>(this.baseUrl + '/products/' + id);
+  }
   getTypes() {
     if (this.types.length > 0) return;
     this.httpClient.get<string[]>(this.baseUrl + '/products/types').subscribe({
