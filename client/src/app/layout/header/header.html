@@ -1,4 +1,6 @@
-<header class="border-b shadow-md p-3 w-full">
+<header
+  class="border-b shadow-md p-3 w-full max-h-20 fixed top-0 z-50 bg-white"
+>
   <div
     class="flex align-middle items-center justify-between max-w-screen-lg mx-auto"
   >
@@ -21,7 +23,7 @@
         [routerLinkActiveOptions]="{exact:true}"
         >Shop</a
       >
-      <a routerLink="">Contact</a>
+      <a routerLink="/not-found">Contact</a>
     </nav>
     <div class="flex gap-3 align-middle">
       <a matBadge="5" matBadgeSize="large" class="custom-badge mt-2 mr-2">
@@ -32,3 +34,10 @@
     </div>
   </div>
 </header>
+
+@if(busyService.loading){
+<mat-progress-bar
+  mode="indeterminate"
+  class="fixed top-20 z-50"
+></mat-progress-bar>
+}
