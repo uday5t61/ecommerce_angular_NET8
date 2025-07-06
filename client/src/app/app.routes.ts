@@ -4,6 +4,7 @@ import { Shop } from './features/shop/shop';
 import { ProductDetails } from './features/shop/product-details/product-details';
 import { NotFound } from './shared/components/not-found/not-found';
 import { ServerError } from './shared/components/server-error/server-error';
+import { Cart } from './features/cart/cart';
 
 export const routes: Routes = [
   {
@@ -17,6 +18,10 @@ export const routes: Routes = [
   {
     path: 'shop/:id',
     component: ProductDetails,
+  },
+  {
+    path: 'cart',
+    component: Cart,
   },
   {
     path: 'not-found',

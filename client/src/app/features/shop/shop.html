@@ -5,7 +5,7 @@
     <mat-paginator
       class="bg-white"
       (page)="handlePageEvent($event)"
-      [length]="products?.totalCount"
+      [length]="products.totalCount"
       [pageSize]="shopParams.pageSize"
       [showFirstLastButtons]="true"
       [pageIndex]="shopParams.pageNumber-1"
@@ -46,10 +46,20 @@
   </div>
 
   <div class="lg:grid-cols-5 grid gap-3">
-    @for (product of products?.data; track product.id) {
+    @for (product of products.data; track product.id) {
     <app-product-item [product]="product"></app-product-item>
     }
   </div>
+  <mat-paginator
+    class="bg-white"
+    (page)="handlePageEvent($event)"
+    [length]="products.totalCount"
+    [pageSize]="shopParams.pageSize"
+    [showFirstLastButtons]="true"
+    [pageIndex]="shopParams.pageNumber-1"
+    [pageSizeOptions]="pageSizeOptions"
+    aria-label="Select page"
+  ></mat-paginator>
 </div>
 
 <mat-menu #sortMenu="matMenu">
